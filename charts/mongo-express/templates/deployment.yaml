@@ -29,7 +29,7 @@ spec:
           value: {{ .Values.basicauth.username | quote }}
         - name: ME_CONFIG_BASICAUTH_PASSWORD
           value: {{ .Values.basicauth.password | quote }}
-        - name: ME_CONFIG_MONGODB_SERVER
+        - name: ME_CONFIG_MONGODB_URL
           value: {{ .Values.mongodb.host }}
         readinessProbe:
           httpGet:
