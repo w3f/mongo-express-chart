@@ -7,7 +7,7 @@ source /scripts/bootstrap-helm.sh
 run_tests() {
     echo Running tests...
 
-    wait_pod_ready mongo-express
+    wait_pod_ready otv-mongo-express
 }
 
 teardown() {
@@ -20,7 +20,7 @@ main(){
         trap teardown EXIT
     fi
 
-    helm install --set replicasetNAme=otv --set replicas=2 mongodb-replicaset stable/mongodb-replicaset
+    helm install --set replicaSetName=otv --set replicas=2 mongodb-replicaset stable/mongodb-replicaset
 
     source /scripts/build-helmfile.sh
 
