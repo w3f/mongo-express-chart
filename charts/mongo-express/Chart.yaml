@@ -1,3 +1,4 @@
-description: MongoDB administration for Mythril Platform
-name: mythril-mongo-express
-version: v0.2.0
+description: MongoDB administration
+name: mongo-express
+version: v0.1.0
+apiVersion: v2
