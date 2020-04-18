@@ -20,7 +20,7 @@ main(){
         trap teardown EXIT
     fi
 
-    helm install mongo-replicaset
+    helm install mongodb-replicaset --set replicasetNAme=otv --set replicas=2
 
     source /scripts/build-helmfile.sh
 
