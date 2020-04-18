@@ -11,7 +11,7 @@ run_tests() {
 }
 
 teardown() {
-    helm del mongo-replicaset
+    helm del mongodb-replicaset
     helmfile delete --purge
 }
 
@@ -20,7 +20,7 @@ main(){
         trap teardown EXIT
     fi
 
-    helm install mongodb-replicaset --set replicasetNAme=otv --set replicas=2
+    helm install --set replicasetNAme=otv --set replicas=2 mongodb-replicaset stable/mongodb-replicaset
 
     source /scripts/build-helmfile.sh
 
