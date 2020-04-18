@@ -1,0 +1,43 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ .Release.Name }}
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: {{ .Release.Name }}
+        image: {{ .Values.image.repo }}:{{ .Values.image.tag }}
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: http
+          containerPort: {{ .Values.backendPort }}
+        env:
+        - name: ME_CONFIG_BASICAUTH_USERNAME
+          value: {{ .Values.basicauth.username | quote }}
+        - name: ME_CONFIG_BASICAUTH_PASSWORD
+          value: {{ .Values.basicauth.password | quote }}
+        - name: ME_CONFIG_MONGODB_SERVER
+          value: {{ .Values.mongodb.host }}
+        readinessProbe:
+          httpGet:
+            path: /__healthcheck__
+            port: {{ .Values.backendPort }}
+          initialDelaySeconds: 30
+          timeoutSeconds: 10
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi

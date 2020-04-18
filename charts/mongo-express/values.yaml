@@ -1,0 +1,15 @@
+image:
+  repo: web3f/mongo-express
+  tag: latest
+
+basicauth:
+  username: admin
+  password: pass
+
+mongodb:
+  host: mongodb://mongodb-replicaset-0.mongodb-replicaset.default.svc.cluster.local,mongodb-replicaset-1.mongodb-replicaset.default.svc.cluster.local:27017/otv?replicaSet=otv
+
+certificate:
+  enabled: true
+
+backendPort: 8080
