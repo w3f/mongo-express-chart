@@ -1,0 +1,17 @@
+environment: {{ .Environment.Name }}
+
+{{ if eq .Environment.Name "production" }}
+basicauth:
+  username: {{ env "MONGO_EXPRESS_USERNAME" | default "admin" | quote }}
+  password: {{ env "MONGO_EXPRESS_PASSWORD" | default "pass" | quote }}
+image:
+  tag: {{ env "CIRCLE_TAG" }}
+
+{{ else }}
+image:
+  tag: {{ env "CIRCLE_SHA1" }}
+certificate:
+  enabled: false
+{{ end }}
+
+domain: w3f.community
