@@ -13,3 +13,5 @@ certificate:
   enabled: true
 
 backendPort: 8080
+
+domain: example.com
