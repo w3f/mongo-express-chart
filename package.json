@@ -12,6 +12,6 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "mongo-express": "^0.54.0"
+    "mongo-express": "^1.0.0-alpha.1"
   }
 }
