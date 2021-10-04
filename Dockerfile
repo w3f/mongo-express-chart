@@ -9,7 +9,6 @@ RUN yarn --ignore-scripts
 
 COPY . .
 RUN yarn && \ 
-  yarn build && \
   apk del git
 
 ENTRYPOINT ["yarn", "start"]
