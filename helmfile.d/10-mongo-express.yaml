@@ -1,5 +1,4 @@
 environments:
-  production:
   ci:
 
 repositories:
@@ -8,10 +7,6 @@ repositories:
 
 releases:
 - name: otv-mongo-express
-{{ if eq .Environment.Name "production" }}
-  chart: w3f/mongo-express
-{{ else }}
   chart: ../charts/mongo-express
-{{ end }}
   values:
   - ./config/mongo-express.yaml.gotmpl

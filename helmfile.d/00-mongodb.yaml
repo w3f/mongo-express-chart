@@ -1,0 +1,11 @@
+environments:
+  ci:
+
+repositories:
+- name: bitnami
+  url: https://charts.bitnami.com/bitnami
+
+releases:
+- name: mongodb-replicaset
+  chart: bitnami/mongodb
+  version: 10.26.4
