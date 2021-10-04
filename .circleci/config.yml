@@ -22,6 +22,14 @@ jobs:
           command: |
             helm lint ./charts/mongo-express
 
+  yarnLint:
+    docker:
+      - image: web3f/node-dind:v1.0.0
+    steps:
+      - checkout
+      - run: yarn
+      - run: yarn lint          
+
   integrationTests:
     docker:
       - image: web3f/ci-commons:v2.4.6
@@ -62,12 +70,18 @@ workflows:
           filters:
             tags:
               only: /.*/
+      - yarnLint:
+          filters:
+            tags:
+              only: /.*/        
       - buildImage:
+          context: dockerhub-bot
           filters:
             tags:
               only: /.*/
           requires:
-            - helmLint    
+            - helmLint
+            - yarnLint    
       - integrationTests:
           filters:
             tags:
@@ -75,6 +89,7 @@ workflows:
           requires:
             - buildImage
       - publishImage:
+          context: dockerhub-bot
           filters:
             branches:
               ignore: /.*/
@@ -83,6 +98,7 @@ workflows:
           requires:
             - integrationTests
       - publishChart:
+          context: github-bot
           filters:
             branches:
               ignore: /.*/
