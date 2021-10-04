@@ -69,19 +69,14 @@ workflows:
       - helmLint:
           filters:
             tags:
-              only: /.*/
-      - yarnLint:
-          filters:
-            tags:
-              only: /.*/        
+              only: /.*/      
       - buildImage:
           context: dockerhub-bot
           filters:
             tags:
               only: /.*/
           requires:
-            - helmLint
-            - yarnLint    
+            - helmLint  
       - integrationTests:
           filters:
             tags:
