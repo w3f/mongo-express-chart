@@ -1,6 +1,6 @@
 image:
   repo: web3f/mongo-express
-  tag: latest
+  tag: v0.2.0
 
 basicauth:
   username: admin
