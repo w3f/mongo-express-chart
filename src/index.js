@@ -6,6 +6,7 @@ const port = 8080
 const mongo_express_config = require('./config.js')
 
 async function bootstrap() {
+  // https://github.com/mongo-express/mongo-express/issues/612
   const resolvedMiddleware = await mongo_express(mongo_express_config);
  
   /* Endpoint for healthchecks. */
