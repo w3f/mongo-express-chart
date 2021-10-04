@@ -12,6 +12,8 @@ image:
   tag: {{ env "CIRCLE_SHA1" }}
 certificate:
   enabled: false
+mongodb:
+  host: mongodb://{{ env "MONGO_USERNAME" | default "username" }}:{{ env "MONGO_PASSWORD" | default "password123" }}@mongodb-replicaset:27017/otv  
 {{ end }}
 
 domain: example.com

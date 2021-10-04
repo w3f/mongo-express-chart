@@ -1,6 +1,6 @@
 {
   "name": "mongo-express",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Packaging of mongo-express",
   "repository": "git+https://github.com/w3f/mongo-express-chart.git",
   "author": "W3F Infrastructure Team <devops@web3.foundation>",
@@ -12,6 +12,6 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "mongo-express": "^0.54.0"
+    "mongo-express": "^1.0.0-alpha.4"
   }
 }
