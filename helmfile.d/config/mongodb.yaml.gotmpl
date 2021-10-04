@@ -1,0 +1,6 @@
+auth:
+  enabled: true
+  rootPassword: {{ env "MONGO_ROOT_PASSWORD" | default "root123123" }}
+  username: {{ env "USERNAME" | default "username" }}
+  password: {{ env "PASSWORD" | default "password123" }}
+  database: {{ env "MONGO_DB" | default "otv" }}
