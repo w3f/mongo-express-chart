@@ -7,7 +7,7 @@ basicauth:
   password: pass
 
 mongodb:
-  host: mongodb://username:password@polkadot-mongodb-0.polkadot-mongodb-headless:27017,polkadot-mongodb-1.polkadot-mongodb-headless:27017/otv?replicaSet=rs0
+  host: mongodb://mongodb-replicaset-0.mongodb-replicaset.default.svc.cluster.local,mongodb-replicaset-1.mongodb-replicaset.default.svc.cluster.local:27017/otv?replicaSet=otv
 
 certificate:
   enabled: true
