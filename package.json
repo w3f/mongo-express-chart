@@ -1,6 +1,6 @@
 {
   "name": "mongo-express",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Packaging of mongo-express",
   "repository": "git+https://github.com/w3f/mongo-express-chart.git",
   "author": "W3F Infrastructure Team <devops@web3.foundation>",
