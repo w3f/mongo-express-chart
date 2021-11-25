@@ -15,3 +15,6 @@ certificate:
 backendPort: 8080
 
 domain: example.com
+
+ingress:
+  whitelist_source_ips: ""
