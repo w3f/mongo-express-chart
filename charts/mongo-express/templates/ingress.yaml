@@ -8,6 +8,9 @@ metadata:
     {{ if .Values.certificate.enabled }}
     cert-manager.io/cluster-issuer: "letsencrypt"
     {{ end }}
+    {{ if .Values.ingress.whitelist-source-ips }}
+    nginx.ingress.kubernetes.io/whitelist-source-range: "{{ .Values.ingress.whitelist-source-ips }}"
+    {{ end }}
 spec:
   {{ if .Values.certificate.enabled }}
   tls:
