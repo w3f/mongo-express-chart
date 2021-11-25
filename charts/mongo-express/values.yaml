@@ -17,4 +17,4 @@ backendPort: 8080
 domain: example.com
 
 ingress:
-  whitelist-source-ips: ""
+  whitelist_source_ips: ""
