@@ -6,6 +6,6 @@ repositories:
 releases:
   - name: mongodb-replicaset
     chart: bitnami/mongodb
-    version: 10.31.4
+    version: 10.31.5
     values:
       - ./config/mongodb.yaml.gotmpl
