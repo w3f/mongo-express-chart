@@ -1237,9 +1237,7 @@ moment@^2.10.6:
   integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
 
 mongo-express@^1.0.0-alpha.4:
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/mongo-express/-/mongo-express-1.0.0-alpha.4.tgz#c438c1a88664425375608ee47c51b105fd12f223"
-  integrity sha512-TI3Qg095IFH4JoZbQtZa6/Clcanw6ep/YzVj0ZiYPeGPY2nSKOyXx1gZGd4wHKyUlgFsG5qjp8qKH/le4pXR8Q==
+  version "1.0.2"
   dependencies:
     basic-auth-connect "^1.0.0"
     bluebird "^3.7.2"
