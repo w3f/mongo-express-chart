@@ -6,7 +6,7 @@ repositories:
   url: https://w3f.github.io/helm-charts/
 
 releases:
-- name: otv-mongo-express
+- name: mongo-express
   chart: ../charts/mongo-express
   values:
   - ./config/mongo-express.yaml.gotmpl

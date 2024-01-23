@@ -1,5 +1,5 @@
 image:
-  repo: web3f/mongo-express
+  repo: mongo-express
   # tag: latest
 
 basicauth:
