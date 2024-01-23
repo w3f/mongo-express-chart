@@ -6,8 +6,7 @@ COPY package.json yarn.lock ./
 RUN yarn --ignore-scripts
 
 COPY . .
-RUN yarn && \ 
-  yarn build
+RUN yarn
 
 FROM node:18-alpine3.16
 WORKDIR /app
