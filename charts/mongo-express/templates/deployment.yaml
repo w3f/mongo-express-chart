@@ -31,12 +31,12 @@ spec:
           value: {{ .Values.basicauth.password | quote }}
         - name: ME_CONFIG_MONGODB_URL
           value: {{ .Values.mongodb.host }}
-        readinessProbe:
-          httpGet:
-            path: /__healthcheck__
-            port: {{ .Values.backendPort }}
-          initialDelaySeconds: 30
-          timeoutSeconds: 10
+        # readinessProbe:
+        #   httpGet:
+        #     path: /__healthcheck__
+        #     port: {{ .Values.backendPort }}
+        #   initialDelaySeconds: 30
+        #   timeoutSeconds: 10
         resources:
           limits:
             cpu: 100m
