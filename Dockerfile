@@ -1,6 +1,4 @@
-FROM node:14.16.1-alpine3.11
-
-RUN apk add --no-cache git
+FROM node:18-alpine3.16 as builder 
 
 WORKDIR /app
 
@@ -9,6 +7,10 @@ RUN yarn --ignore-scripts
 
 COPY . .
 RUN yarn && \ 
-  apk del git
+  yarn build
+
+FROM node:18-alpine3.16
+WORKDIR /app
+COPY --from=builder /app /app
 
 ENTRYPOINT ["yarn", "start"]
