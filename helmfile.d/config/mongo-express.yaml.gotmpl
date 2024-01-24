@@ -1,22 +1,6 @@
 environment: {{ .Environment.Name }}
 
-{{ if eq .Environment.Name "production" }}
-basicauth:
-  username: {{ env "MONGO_EXPRESS_USERNAME" | default "admin" | quote }}
-  password: {{ env "MONGO_EXPRESS_PASSWORD" | default "pass" | quote }}
-image:
-  tag: {{ env "CIRCLE_TAG" }}
-
-{{ else }}
-image:
-  tag: {{ env "CIRCLE_SHA1" }}
 certificate:
   enabled: false
 mongodb:
   host: mongodb://{{ env "MONGO_USERNAME" | default "username" }}:{{ env "MONGO_PASSWORD" | default "password123" }}@mongodb-replicaset:27017/otv  
-{{ end }}
-
-domain: example.com
-
-ingress:
-  whitelist_source_ips: "127.0.0.1/32"
