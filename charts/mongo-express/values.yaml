@@ -6,6 +6,8 @@ basicauth:
   username: admin
   password: pass
 
+admin: false  
+
 mongodb:
   host: mongodb://mongodb-replicaset-0.mongodb-replicaset.default.svc.cluster.local,mongodb-replicaset-1.mongodb-replicaset.default.svc.cluster.local:27017/otv?replicaSet=otv
 

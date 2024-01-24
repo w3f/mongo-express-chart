@@ -32,7 +32,7 @@ spec:
         - name: ME_CONFIG_MONGODB_URL
           value: {{ .Values.mongodb.host }}
         - name: ME_CONFIG_MONGODB_ENABLE_ADMIN
-          value: 'false' 
+          value: {{ .Values.admin | quote }}
         readinessProbe:
           httpGet:
             path: /status
