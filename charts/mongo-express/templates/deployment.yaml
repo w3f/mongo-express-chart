@@ -28,9 +28,9 @@ spec:
         - name: ME_CONFIG_BASICAUTH_USERNAME
           value: {{ .Values.basicauth.username | quote }}
         - name: ME_CONFIG_BASICAUTH_PASSWORD
-          value: {{ .Values.basicauth.password | quote }}  
+          value: {{ .Values.basicauth.password | quote }}
         - name: ME_CONFIG_MONGODB_URL
-          value: {{ .Values.mongodb.host }} 
+          value: {{ .Values.mongodb.host }}
         - name: ME_CONFIG_MONGODB_ENABLE_ADMIN
           value: 'false' 
         readinessProbe:
