@@ -35,8 +35,14 @@ spec:
           httpGet:
             path: /status
             port: {{ .Values.backendPort }}
-          initialDelaySeconds: 30
-          timeoutSeconds: 10
+          initialDelaySeconds: 20
+          timeoutSeconds: 20
+        livenessProbe:
+          httpGet:
+            path: /status
+            port: {{ .Values.backendPort }}
+          initialDelaySeconds: 20
+          timeoutSeconds: 20  
         resources:
           limits:
             cpu: 100m
