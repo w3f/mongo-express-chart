@@ -1,5 +1,5 @@
 description: MongoDB administration
 name: mongo-express
-version: v1.0.1
+version: v1.0.2
 appVersion: 1.0.2-20
 apiVersion: v2
